@@ -1,0 +1,79 @@
+.home {
+  font-family: Arial;
+}
+
+/* HERO */
+.hero {
+  height: 80vh;
+  background-image: url("/src/data/venue11.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(255,255,255,0.85);
+  padding: 50px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 38px;
+  color: #d63384;
+}
+
+.hero-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  background: #ff4d88;
+  color: white;
+  border-radius: 8px;
+}
+
+/* FEATURES */
+.features {
+  padding: 50px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* PREVIEW */
+.preview {
+  padding: 40px;
+  text-align: center;
+}
+
+.preview-cards {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.mini-card {
+  padding: 20px;
+  background: #ffe6f0;
+  border-radius: 10px;
+}
+
+/* CTA */
+.cta {
+  padding: 60px;
+  text-align: center;
+  background: #fff0f6;
+}
