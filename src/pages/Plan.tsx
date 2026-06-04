@@ -154,8 +154,7 @@ const deleteTask = (id: number) => {
   </button>
 
   
-</div>
-           
+</div>  
 
             <form onSubmit={handleAddGuest} className="input-group">
               <InputField
@@ -202,10 +201,11 @@ const deleteTask = (id: number) => {
     Prev
   </button>
 
+  {filteredGuests.length > 0 && (
   <span>
     {currentPage}/{totalPages}
   </span>
-
+)}
   <button
     type="button"
     disabled={currentPage === totalPages}
@@ -221,29 +221,26 @@ const deleteTask = (id: number) => {
 
             <form onSubmit={handleAddExpense} className="input-group">
               <InputField
-  value={expenseName}
-  onChange={(e) => setExpenseName(e.target.value)}
-  placeholder="Npr. Restoran"
-/>
+              value={expenseName}
+              onChange={(e) => setExpenseName(e.target.value)}
+              placeholder="Npr. Restoran"
+              />
 
               <InputField
-  value={expenseVal}
-  type="number"
-  onChange={(e) =>
-    setExpenseVal(
-      e.target.value === ""
-        ? ""
-        : Number(e.target.value)
-    )
-  }
-  placeholder="€"
-/>
+              value={expenseVal}
+              type="number"
+              onChange={(e) => setExpenseVal(e.target.value === "" ? "": 
+                Number(e.target.value)
+              ) 
+            }
+            placeholder="€"
+            />
 
              <CustomButton
-  text="+"
-  type="submit"
-  className="add-button"
-/>
+             text="+"
+             type="submit"
+             className="add-button"
+             />
             </form>
 
             <ul className="item-list">
@@ -272,7 +269,6 @@ const deleteTask = (id: number) => {
 
         </div>
 
-        {/* SREDINA */}
         <div>
           <div className="progress-card">
             <h3>Planning Progress</h3>
@@ -287,25 +283,23 @@ const deleteTask = (id: number) => {
           </div>
         </div>
 
-        {/* DESNA KOLONA */}
         <div className="sidebar">
 
           <div className="card-light">
-  <h3>To Do List</h3>
+            <h3>To Do List</h3>
+            <form onSubmit={addTask} className="input-group">
+              <InputField
+              value={taskInput}
+              placeholder="Nova obaveza..."
+              onChange={(e) => setTaskInput(e.target.value)}
+              />
 
-  <form onSubmit={addTask} className="input-group">
-    <InputField
-  value={taskInput}
-  placeholder="Nova obaveza..."
-  onChange={(e) => setTaskInput(e.target.value)}
-/>
-
-    <CustomButton
-  text="+"
-  type="submit"
-  className="add-button"
-/>
-  </form>
+              <CustomButton
+              text="+"
+              type="submit"
+              className="add-button"
+              />
+        </form>
 
   <ul className="item-list">
     {tasks.map((task) => (
