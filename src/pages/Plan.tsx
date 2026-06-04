@@ -3,6 +3,7 @@ import "./Plan.css";
 import CustomButton from "../components/CustomButton";
 import InputField from "../components/InputField";
 
+
 interface Guest {
   id: number;
   name: string;
@@ -259,26 +260,24 @@ const deleteTask = (id: number) => {
             <h3 className="card-title">Budžet</h3>
 
             <form onSubmit={handleAddExpense} className="input-group">
-              <input
-                className="input-field"
-                value={expenseName}
-                onChange={(e) => setExpenseName(e.target.value)}
-                placeholder="Npr. Restoran"
-              />
+              <InputField
+  value={expenseName}
+  onChange={(e) => setExpenseName(e.target.value)}
+  placeholder="Npr. Restoran"
+/>
 
-              <input
-                className="input-field small-input"
-                type="number"
-                value={expenseVal}
-                onChange={(e) =>
-                  setExpenseVal(
-                    e.target.value === ""
-                      ? ""
-                      : Number(e.target.value)
-                  )
-                }
-                placeholder="€"
-              />
+              <InputField
+  value={expenseVal}
+  type="number"
+  onChange={(e) =>
+    setExpenseVal(
+      e.target.value === ""
+        ? ""
+        : Number(e.target.value)
+    )
+  }
+  placeholder="€"
+/>
 
              <CustomButton
   text="+"
@@ -335,12 +334,11 @@ const deleteTask = (id: number) => {
   <h3>To Do List</h3>
 
   <form onSubmit={addTask} className="input-group">
-    <input
-      className="input-field"
-      placeholder="Nova obaveza..."
-      value={taskInput}
-      onChange={(e) => setTaskInput(e.target.value)}
-    />
+    <InputField
+  value={taskInput}
+  placeholder="Nova obaveza..."
+  onChange={(e) => setTaskInput(e.target.value)}
+/>
 
     <CustomButton
   text="+"
