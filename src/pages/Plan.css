@@ -124,19 +124,6 @@
     font-style: italic; 
     font-size: 0.9rem; 
     text-align: center; }
-.calendar-box {
-    background-color: #d9b3b3;
-    padding: 20px;
-    border-radius: 15px;
-    color: #7a3131;
-}
-.calendar-grid { 
-    display: grid; 
-    grid-template-columns: repeat(7, 1fr); 
-    gap: 5px; 
-    text-align: center; 
-    font-size: 0.8rem;
-    margin-top: 10px; }
 
 .pagination {
   display: flex;
@@ -149,6 +136,28 @@
 
   background: #f3f3f3;
   border-radius: 10px;
+}
+
+.countdown-card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.countdown-card input {
+  padding: 8px;
+  border: 1px solid #f4b6c2;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.countdown-card p {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #d86a8a;
 }
 
 .pagination button {
