@@ -83,7 +83,8 @@ const totalPages = Math.ceil(
   const handleAddExpense = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!expenseName.trim() || !expenseVal) return;
+    if (!expenseName.trim()) return;
+    if (expenseVal === "" || expenseVal < 0) return;
 
     setExpenses([
       ...expenses,
@@ -235,6 +236,7 @@ const daysLeft = weddingDate
               <InputField
               value={expenseVal}
               type="number"
+               min="0"
               onChange={(e) => setExpenseVal(e.target.value === "" ? "": 
                 Number(e.target.value)
               ) 
@@ -275,7 +277,7 @@ const daysLeft = weddingDate
 
         </div>
 
-        <div>
+             <div>
           <div className="progress-card">
             <h3>Planning Progress</h3>
 
@@ -289,66 +291,63 @@ const daysLeft = weddingDate
           </div>
         </div>
 
-             <div className="countdown-card">
-  <h3>Wedding Countdown</h3>
+        <div className="right-column">
+          <div className="countdown-card">
+            <h3>Wedding Countdown</h3>
 
-  <input
-    type="date"
-    value={weddingDate}
-    onChange={(e) => setWeddingDate(e.target.value)}
-  />
+            <input
+              type="date"
+              value={weddingDate}
+              onChange={(e) => setWeddingDate(e.target.value)}
+            />
 
-  {daysLeft !== null && (
-    <p>
-      {daysLeft > 0
-        ? `${daysLeft} days left`
-        : "Your wedding day has arrived! 💍"}
-    </p>
-  )}
-</div>
+            {daysLeft !== null && (
+              <p>
+                {daysLeft > 0
+                  ? `${daysLeft} days left`
+                  : "Your wedding day has arrived! 💍"}
+              </p>
+            )}
+          </div>
 
           <div className="card-light">
             <h3>To Do List</h3>
+
             <form onSubmit={addTask} className="input-group">
               <InputField
-              value={taskInput}
-              placeholder="Nova obaveza..."
-              onChange={(e) => setTaskInput(e.target.value)}
+                value={taskInput}
+                placeholder="Nova obaveza..."
+                onChange={(e) => setTaskInput(e.target.value)}
               />
 
-              <CustomButton
-              text="+"
-              type="submit"
-              className="add-button"
-              />
-        </form>
+              <CustomButton text="+" type="submit" className="add-button" />
+            </form>
 
-  <ul className="item-list">
-    {tasks.map((task) => (
-      <li key={task.id} className="list-item">
-        <span
-          onClick={() => toggleTask(task.id)}
-          style={{
-            cursor: "pointer",
-            textDecoration: task.done
-              ? "line-through"
-              : "none",
-          }}
-        >
-          {task.done ? "✓ " : "○ "}
-          {task.text}
-        </span>
+            <ul className="item-list">
+              {tasks.map((task) => (
+                <li key={task.id} className="list-item">
+                  <span
+                    onClick={() => toggleTask(task.id)}
+                    style={{
+                      cursor: "pointer",
+                      textDecoration: task.done ? "line-through" : "none",
+                    }}
+                  >
+                    {task.done ? "✓ " : "○ "}
+                    {task.text}
+                  </span>
 
-        <button
-          onClick={() => deleteTask(task.id)}
-          className="del-btn"
-        >
-          x
-        </button>
-      </li>
-    ))}
-  </ul>
-</div>
+                  <button
+                    onClick={() => deleteTask(task.id)}
+                    className="del-btn"
+                  >
+                    x
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
       </main>
     </div>

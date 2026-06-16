@@ -1,9 +1,16 @@
-.plan-container { 
-    background-color: #fdf8f5; 
-    min-height: 100vh; 
-    padding-top: 40px; 
-    font-family: sans-serif; }
+.plan-container {
+  min-height: 100vh;
+  padding: 40px 30px;
+  font-family: sans-serif;
 
+  background:
+    linear-gradient(rgba(255, 250, 252, 0.82), rgba(255, 250, 252, 0.9)),
+    url("/src/data/venue11.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 .main-grid {
     display: grid;
     grid-template-columns: minmax(220px, 280px) 1fr minmax(220px, 320px);
@@ -102,11 +109,13 @@
 
 .progress-card {
     background-color: #f7dada;
-    padding: 30px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 100%;
     color: #7a3131;
     text-align: center;
-    min-height: 180px;
+    max-height: 300px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 .progress-circle { 
     width: 120px; 
@@ -117,9 +126,9 @@
     align-items: center; 
     justify-content: center; 
     margin: 20px auto; }
-.percentage { 
-    font-size: 2rem; 
-    font-weight: bold; }
+.percentage {
+  font-size: 1.4rem;
+}
 .advice-text { 
     font-style: italic; 
     font-size: 0.9rem; 
@@ -176,36 +185,206 @@
 }
 /*responzivnost*/
 @media (max-width: 768px) {
+
   .plan-container {
-    padding: 20px 12px;
-    overflow-x: hidden;
+    background: #fdf8f5;
+    padding: 15px;
   }
 
   .main-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding: 0;
   }
 
   .sidebar,
-  .progress-card,
+ .right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
   .card-dark,
   .card-light,
+  .progress-card,
   .countdown-card {
     width: 100%;
-    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+
+  }
+
+  .progress-card,
+  .countdown-card,
+  .card-light {
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+  .progress-card {
+  background: rgba(255, 230, 235, 0.92);
+  padding: 18px;
+  border-radius: 20px;
+  color: #7a3131;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+  .progress-circle {
+  width: 100px;
+  height: 100px;
+  border: 7px solid #c96f86;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
+}
+
+  .percentage {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+  .card-title,
+  .progress-card h3,
+  .countdown-card h3,
+  .card-light h3 {
+    font-size: 1.5rem;
   }
 
   .input-group {
     flex-wrap: wrap;
   }
 
-  .small-input {
+  .input-field {
     width: 100%;
   }
 
-  .countdown-card input {
-    width: 100%;
+  .add-button {
+  background-color: #7a3131;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+  .pagination {
+    flex-wrap: wrap;
   }
+  .right-column {
+  gap: 5px;
+}
+
+.countdown-card {
+  margin-bottom: 0;
+}
+
+
+
+/*stilizovanje*/
+.card-dark,
+.card-light,
+.progress-card,
+.countdown-card {
+  border-radius: 22px;
+  box-shadow: 0 14px 35px rgba(123, 45, 45, 0.15);
+  backdrop-filter: blur(8px);
+}
+
+.card-dark {
+  background: linear-gradient(135deg, #c96f86, #a65d5d);
+}
+
+.card-light,
+.countdown-card {
+  background: rgba(255, 255, 255, 0.92);
+  color: #7a3131;
+}
+
+.progress-card {
+    background: rgba(255, 230, 235, 0.92);
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress-circle {
+  width: 90px;
+  height: 90px;
+  border: 6px solid #c96f86;
+}
+
+.input-field {
+  border: 1px solid #f3c5d1;
+}
+
+
+
+.add-button:hover {
+  background: #c96f86;
+}
+.card-light {
+  margin-top: 170px;
+}
+.list-item span {
+  cursor: pointer;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+.add-button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .main-grid {
+    gap: 15px;
+  }
+
+  .right-column {
+    gap: 10px;
+  }
+
+  .progress-card,
+  .countdown-card,
+  .card-light {
+    max-width: 360px;
+  }
+
+  .card-light {
+    margin-top: 0;
+  }
+  .progress-card {
+  justify-self: center;
+}
+
+.right-column {
+  justify-self: center;
+}
 }
