@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import Vendors from "./pages/Vendors";
 import Inspo from "./pages/Inspo";
 import Plan from "./pages/Plan";
+import VendorDetails from "./pages/VendorDetails";
+import Dresses from "./pages/Dresses";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/dresses" element={<Dresses />} />
+        <Route path="/vendors/:id" element={<VendorDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/vendors" element={<Vendors />} />
         <Route path="/inspo" element={<Inspo />} />

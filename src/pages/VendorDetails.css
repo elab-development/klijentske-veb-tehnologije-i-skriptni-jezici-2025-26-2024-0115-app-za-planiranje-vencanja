@@ -1,0 +1,142 @@
+.vendor-details-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff5f8, #ffe3ec);
+  padding: 40px;
+}
+
+.back-button {
+  margin-bottom: 25px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #b83260;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(184, 50, 96, 0.15);
+}
+
+.vendor-details-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 35px;
+  padding: 30px;
+  display: flex;
+  gap: 35px;
+  box-shadow: 0 12px 35px rgba(184, 50, 96, 0.2);
+}
+
+.vendor-image-box {
+  width: 40%;
+  height: 700px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.vendor-image-box img {
+  width: 100%;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.vendor-content {
+  flex: 1;
+}
+
+.vendor-category {
+  color: #d96b91;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.vendor-content h1 {
+  font-size: 42px;
+  color: #b83260;
+  margin: 10px 0;
+}
+
+.vendor-description {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.vendor-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.vendor-info-grid div {
+  background-color: #fff5f8;
+  padding: 18px;
+  border-radius: 20px;
+}
+
+.vendor-info-grid span {
+  color: #d96b91;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.vendor-info-grid p {
+  margin-top: 7px;
+  color: #444;
+}
+
+.contact-box {
+  margin-top: 25px;
+  background: #ffe3ec;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.contact-box h3 {
+  color: #b83260;
+}
+
+.contact-box p {
+  color: #555;
+}
+
+.contact-box button {
+  margin-top: 15px;
+  padding: 13px 26px;
+  border: none;
+  border-radius: 25px;
+  background-color: #d94f7d;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-box button:hover {
+  background-color: #b83260;
+}
+
+@media (max-width: 768px) {
+  .vendor-details-page {
+    padding: 20px;
+  }
+
+  .vendor-details-card {
+    flex-direction: column;
+  }
+
+  .vendor-image-box {
+    width: 100%;
+  }
+
+  .vendor-content h1 {
+    font-size: 32px;
+  }
+
+  .vendor-info-grid {
+    grid-template-columns: 1fr;
+  }
+}

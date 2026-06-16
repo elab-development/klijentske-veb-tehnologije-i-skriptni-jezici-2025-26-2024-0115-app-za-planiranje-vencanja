@@ -34,6 +34,13 @@ function Navbar() {
 >
   Plan
 </Link>
+        <Link
+        to="/dresses"
+        className={location.pathname === "/dresses" ? "active-link" : ""}
+>
+  Dresses
+</Link>
+
       </div>
     </nav>
   );

@@ -16,6 +16,7 @@ function Plan() {
   const [expenseVal, setExpenseVal] = useState<number | "">("");
   const [tasks, setTasks] = useState<Task[]>([]);
   const [taskInput, setTaskInput] = useState("");
+  const [weddingDate, setWeddingDate] = useState("");
 
   const manager = useMemo(() => new WeddingManager(), []);
   const [filter, setFilter] =
@@ -126,6 +127,13 @@ const toggleTask = (id: number) => {
 const deleteTask = (id: number) => {
   setTasks(tasks.filter((t) => t.id !== id));
 };
+
+const daysLeft = weddingDate
+  ? Math.ceil(
+      (new Date(weddingDate).getTime() - new Date().getTime()) /
+        (1000 * 60 * 60 * 24)
+    )
+  : null;
 
   return (
     <div className="plan-container">
@@ -283,7 +291,23 @@ const deleteTask = (id: number) => {
           </div>
         </div>
 
-        <div className="sidebar">
+             <div className="countdown-card">
+  <h3>Wedding Countdown</h3>
+
+  <input
+    type="date"
+    value={weddingDate}
+    onChange={(e) => setWeddingDate(e.target.value)}
+  />
+
+  {daysLeft !== null && (
+    <p>
+      {daysLeft > 0
+        ? `${daysLeft} days left`
+        : "Your wedding day has arrived! 💍"}
+    </p>
+  )}
+</div>
 
           <div className="card-light">
             <h3>To Do List</h3>
@@ -327,18 +351,6 @@ const deleteTask = (id: number) => {
     ))}
   </ul>
 </div>
-
-          <div className="calendar-box">
-            <h4>August 2026</h4>
-
-            <div className="calendar-grid">
-              {[...Array(31)].map((_, i) => (
-                <div key={i}>{i + 1}</div>
-              ))}
-            </div>
-          </div>
-
-        </div>
 
       </main>
     </div>
