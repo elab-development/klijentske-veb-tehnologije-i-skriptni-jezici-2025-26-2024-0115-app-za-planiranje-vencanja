@@ -1,5 +1,6 @@
 .navbar {
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 1000;
 
@@ -67,4 +68,29 @@
 
 .nav-links a.active-link::after {
   width: 100%;
+}
+/*responzivnost*/
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 10px;
+  }
+
+  .logo {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
 }

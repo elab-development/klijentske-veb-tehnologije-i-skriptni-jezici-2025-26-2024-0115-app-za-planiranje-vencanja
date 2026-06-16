@@ -130,3 +130,51 @@
   text-align: center;
   background: linear-gradient(135deg, #fde4ee, #fff7f9);
 }
+/*responzivnost*/
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 70vh;
+    padding: 40px 16px;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px 20px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .features,
+  .preview,
+  .cta {
+    padding: 40px 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .preview-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mini-card {
+    width: 100%;
+    max-width: 320px;
+  }
+}

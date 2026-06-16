@@ -174,3 +174,38 @@
   opacity: 0.3;
   cursor: not-allowed;
 }
+/*responzivnost*/
+@media (max-width: 768px) {
+  .plan-container {
+    padding: 20px 12px;
+    overflow-x: hidden;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .sidebar,
+  .progress-card,
+  .card-dark,
+  .card-light,
+  .countdown-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input-group {
+    flex-wrap: wrap;
+  }
+
+  .small-input {
+    width: 100%;
+  }
+
+  .countdown-card input {
+    width: 100%;
+  }
+}
