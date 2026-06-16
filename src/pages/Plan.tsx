@@ -9,12 +9,24 @@ import type { Guest, Expense, Task } from "../models/WeddingModel";
 
 function Plan() {
  
-  const [guests, setGuests] = useState<Guest[]>([]);
+  const [guests, setGuests] = useState<Guest[]>(() => {
+  const saved = localStorage.getItem("wedding_guests");
+  return saved ? JSON.parse(saved) : [];
+});
   const [guestInput, setGuestInput] = useState("");
-  const [expenses, setExpenses] = useState<Expense[]>([]);
+
+
+  const [expenses, setExpenses] = useState<Expense[]>(() => {
+  const saved = localStorage.getItem("wedding_expenses");
+  return saved ? JSON.parse(saved) : [];
+});
   const [expenseName, setExpenseName] = useState("");
   const [expenseVal, setExpenseVal] = useState<number | "">("");
-  const [tasks, setTasks] = useState<Task[]>([]);
+
+  const [tasks, setTasks] = useState<Task[]>(() => {
+  const saved = localStorage.getItem("wedding_tasks");
+  return saved ? JSON.parse(saved) : [];
+});
   const [taskInput, setTaskInput] = useState("");
   const [weddingDate, setWeddingDate] = useState("");
 
@@ -34,20 +46,6 @@ function Plan() {
 const totalPages = Math.ceil(
   filteredGuests.length / guestsPerPage
 );
-  useEffect(() => {
-    const savedTasks = localStorage.getItem("wedding_tasks");
-    if (savedTasks) setTasks(JSON.parse(savedTasks));
-    const savedGuests = localStorage.getItem("wedding_guests");
-    const savedExpenses = localStorage.getItem("wedding_expenses");
-
-    if (savedGuests) {
-      setGuests(JSON.parse(savedGuests));
-    }
-
-    if (savedExpenses) {
-      setExpenses(JSON.parse(savedExpenses));
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("wedding_tasks", JSON.stringify(tasks));
