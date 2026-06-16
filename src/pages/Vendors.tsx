@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "./Vendors.css";
 import { useEffect, useState } from "react";
 
@@ -82,6 +83,7 @@ const vendorCategories = [
 
 
 function Vendors() {
+  const navigate = useNavigate();
    const [apiVendors, setApiVendors] = useState<ApiVendor[]>([]);
 
   useEffect(() => {
@@ -106,7 +108,13 @@ function Vendors() {
                 <img src={vendor.image} alt={vendor.name} />
                 <div className="vendor-info">
                   <h3>{vendor.name}</h3>
-                  <button>Learn More</button>
+                  <button
+  onClick={() =>
+    navigate(`/vendors/${vendor.name.toLowerCase().replaceAll(" ", "-")}`)
+  }
+>
+  Learn More
+</button>
                 </div>
               </div>
             ))}
