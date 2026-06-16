@@ -3,6 +3,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const location = useLocation();
+  
   return (
     <nav className="navbar">
       <div className="logo">HappyBride</div>
@@ -34,13 +35,12 @@ function Navbar() {
 >
   Plan
 </Link>
-        <Link
+<Link
         to="/dresses"
         className={location.pathname === "/dresses" ? "active-link" : ""}
 >
   Dresses
 </Link>
-
       </div>
     </nav>
   );
