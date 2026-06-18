@@ -7,14 +7,6 @@ interface ApiVendor {
   name: string;
   email: string;
 }
-interface ApiReview {
-  id: number;
-  name: string;
-  email: string;
-  body: string;
-}
-
-
 
 const vendorCategories = [
   {
@@ -91,15 +83,12 @@ const vendorCategories = [
 function Vendors() {
   const navigate = useNavigate();
    const [apiVendors, setApiVendors] = useState<ApiVendor[]>([]);
-   const [apiReviews, setApiReviews] = useState<ApiReview[]>([]);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then((data) => setApiVendors(data));
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((data) => setApiReviews(data));
-  }, []);
+  }, 
+[]);
   return (
     <div className="vendors-page">
       <h1>Wedding Vendors</h1>
@@ -138,19 +127,6 @@ function Vendors() {
       <div className="vendor-info">
         <h3>{vendor.name}</h3>
         <p>{vendor.email}</p>
-      </div>
-    </div>
-  ))}
-</div>
-<h2 className="api-title">Wedding Planning Notes (API)</h2>
-
-<div className="vendor-grid">
-  {apiReviews.slice(0, 6).map((review) => (
-    <div key={review.id} className="vendor-card">
-      <div className="vendor-info">
-        <h3>{review.name}</h3>
-        <p>{review.email}</p>
-        <p>{review.body.slice(0, 80)}...</p>
       </div>
     </div>
   ))}
