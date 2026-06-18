@@ -97,31 +97,45 @@
 }
 
 /* PREVIEW */
-.preview {
-  padding: 50px 8% 65px;
-  text-align: center;
-}
-
 .preview-cards {
   display: flex;
   justify-content: center;
-  gap: 22px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
 .mini-card {
-  padding: 22px 34px;
-  background: #fde4ee;
-  color: #7b4b63;
-  border-radius: 18px;
-  font-size: 18px;
-  box-shadow: 0 8px 20px rgba(216, 139, 163, 0.15);
+  width: 260px;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
 .mini-card:hover {
-  background: #f7cddd;
-  transform: translateY(-4px);
+  transform: translateY(-8px);
+}
+
+.mini-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.mini-card-text {
+  padding: 16px;
+  text-align: left;
+}
+
+.mini-card-text h3 {
+  color: #8b2f3d;
+  margin-bottom: 8px;
+}
+
+.mini-card-text p {
+  color: #777;
+  font-size: 14px;
 }
 
 /* CTA */
@@ -173,8 +187,4 @@
     align-items: center;
   }
 
-  .mini-card {
-    width: 100%;
-    max-width: 320px;
-  }
 }
