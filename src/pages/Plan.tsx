@@ -142,7 +142,7 @@ const daysLeft = weddingDate
         <div className="sidebar">
 
           <div className="card-dark">
-            <h3 className="card-title">Lista Gostiju</h3>
+            <h3 className="card-title">Guest list</h3>
            <div className="filter-buttons">
   <button
     type="button"
@@ -167,7 +167,7 @@ const daysLeft = weddingDate
               <InputField
               value={guestInput}
               onChange={(e) => setGuestInput(e.target.value)}
-              placeholder="Ime gosta..."
+              placeholder="Guest name..."
               />
 
              <CustomButton
@@ -224,13 +224,13 @@ const daysLeft = weddingDate
           </div>
 
           <div className="card-dark">
-            <h3 className="card-title">Budžet</h3>
+            <h3 className="card-title">Budget</h3>
 
             <form onSubmit={handleAddExpense} className="input-group">
               <InputField
               value={expenseName}
               onChange={(e) => setExpenseName(e.target.value)}
-              placeholder="Npr. Restoran"
+              placeholder="ex. Restaurant"
               />
 
               <InputField
@@ -271,7 +271,7 @@ const daysLeft = weddingDate
             </ul>
 
             <div className="total-box">
-              Ukupno: {manager.formatPrice(manager.calculateTotal(expenses))}
+              Total: {manager.formatPrice(manager.calculateTotal(expenses))}
             </div>
           </div>
 
@@ -316,7 +316,7 @@ const daysLeft = weddingDate
             <form onSubmit={addTask} className="input-group">
               <InputField
                 value={taskInput}
-                placeholder="Nova obaveza..."
+                placeholder="New task..."
                 onChange={(e) => setTaskInput(e.target.value)}
               />
 

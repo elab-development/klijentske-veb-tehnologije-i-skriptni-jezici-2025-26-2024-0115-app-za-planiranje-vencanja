@@ -96,7 +96,6 @@
   box-shadow: 0 18px 35px rgba(216, 139, 163, 0.25);
 }
 
-/* PREVIEW */
 .preview-cards {
   display: flex;
   justify-content: center;
@@ -138,13 +137,12 @@
   font-size: 14px;
 }
 
-/* CTA */
 .cta {
   padding: 70px 20px;
   text-align: center;
   background: linear-gradient(135deg, #fde4ee, #fff7f9);
 }
-/*responzivnost*/
+
 @media (max-width: 768px) {
   .hero {
     height: auto;

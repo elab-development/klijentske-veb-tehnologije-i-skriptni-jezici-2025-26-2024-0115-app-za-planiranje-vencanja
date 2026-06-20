@@ -183,7 +183,7 @@
   opacity: 0.3;
   cursor: not-allowed;
 }
-/*responzivnost*/
+
 @media (max-width: 768px) {
 
   .plan-container {
@@ -293,9 +293,6 @@
   margin-bottom: 0;
 }
 
-
-
-/*stilizovanje*/
 .card-dark,
 .card-light,
 .progress-card,
